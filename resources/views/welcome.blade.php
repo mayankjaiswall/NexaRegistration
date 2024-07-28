@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Dealership</title>
-    <link rel="stylesheet" href="{{url('css/welcome.css')}}">
-</head>
+@extends('Mainlayout');
 
-<body>
+@section('bodyofpage')
     <header>
         <div class="logo">
             <h1>Car Dealership</h1>
@@ -57,5 +50,4 @@
     <footer>
         <p>&copy; 2024 Car Dealership. All rights reserved.</p>
     </footer>
-</body>
-</html>
+@endsection
