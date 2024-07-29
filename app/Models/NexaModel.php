@@ -10,5 +10,5 @@ class NexaModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'cars';
+    protected $table = 'cars'; //table name not the database name keep this in your mind
 }

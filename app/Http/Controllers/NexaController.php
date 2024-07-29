@@ -21,7 +21,7 @@ class NexaController extends Controller
         ]);
 
         $nexadata = new NexaModel(); //created object for nexadata
-
+        //object name  //databasename  =  // validateddata [//html name content]
         $nexadata->name = $validatedData['name'];
         $nexadata->city = $validatedData['city'];
         $nexadata->age = $validatedData['age'];
@@ -32,7 +32,14 @@ class NexaController extends Controller
 
         $nexadata->save(); //saving data in the model instance
 
-
         return redirect()->back();
+    }
+
+    public function show(Request $request)
+    {
+
+        $userdata = NexaModel::all();
+        //dd($userdata);  //dump and die
+        return view('showdata', compact('userdata'));
     }
 }

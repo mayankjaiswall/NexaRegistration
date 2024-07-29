@@ -10,7 +10,7 @@
 
     <div class="form-container">
         <form action="{{route('storeddata')}}" method="post" class="registration-form">
-            @csrf
+          @csrf  
             <h2>Registration Form</h2>
             <div class="form-group">
                 <label for="name">Full Name:</label>
