@@ -9,13 +9,14 @@
 
 </head>
 <body>
+    {{-- @dd($editrow); --}}
     <div class="form-container">
         <form action="{{route('storeddata')}}" method="post" class="registration-form">
           @csrf  
             <h2>Registration Form</h2>
             <div class="form-group">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required >
+                <input type="text" id="name" name="name" required  value="{{$editrow->name}}" >
                 @error('name')
                  <div class="alert alert-danger">{{$message}}</div>    
                 @enderror

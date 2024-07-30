@@ -12,11 +12,12 @@
     
 <div class="container">
  <div class="row">
+    <a href="{{route('registerdata')}}" class="btn btn-success">Add</a>
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
                 <table class="table table-striped table-bordered">
-                    <thead>
+                    <thead align="center">
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
@@ -26,11 +27,12 @@
                             <th>Email</th>
                             <th>Contact</th>
                             <th>Address</th>
+                            <th colspan="2" >Action</th>
                         </tr>
                     </thead>
         <tbody>
          @foreach ($userdata as $item)
-                
+              {{-- //  @dd($item); --}}
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$item->name}}</td>
@@ -40,10 +42,13 @@
                 <td>{{$item->email }}</td>
                 <td>{{$item->contact}}</td>
                 <td>{{$item->address}}</td>
-
+                                                   
+                <td><a href="{{route('deletedata',$item->id)}}" class="btn btn-danger">Delete</a></td>
+                <td><a href="{{route('editdata', $item->id)}}" class="btn btn-info">Edit</a></td>
+               
             </tr>
             @endforeach
-        </tbody>
+                </tbody>
               </table>
 
             </div>

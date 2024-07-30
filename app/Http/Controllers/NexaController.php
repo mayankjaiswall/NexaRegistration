@@ -8,8 +8,10 @@ use App\Models\NexaModel;
 
 class NexaController extends Controller
 {
+
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'name' => 'required|string',
             'city' => 'required|string',
@@ -20,8 +22,9 @@ class NexaController extends Controller
             'address' => 'required|string',
         ]);
 
-        $nexadata = new NexaModel(); //created object for nexadata
-        //object name  //databasename  =  // validateddata [//html name content]
+
+        $nexadata =  new NexaModel(); //created object for nexadata
+        //object name  //databasename  =  // validateddata   [//html name segment names]
         $nexadata->name = $validatedData['name'];
         $nexadata->city = $validatedData['city'];
         $nexadata->age = $validatedData['age'];
@@ -32,8 +35,9 @@ class NexaController extends Controller
 
         $nexadata->save(); //saving data in the model instance
 
-        return redirect()->back();
+        return redirect()->route('dataofuser');
     }
+
 
     public function show(Request $request)
     {
@@ -41,5 +45,25 @@ class NexaController extends Controller
         $userdata = NexaModel::all();
         //dd($userdata);  //dump and die
         return view('showdata', compact('userdata'));
+    }
+
+
+    public function deleted($id)
+    {
+        //dd($id);
+        $deleterow = NexaModel::find($id);
+
+        $deleterow->delete();
+
+        return redirect()->route('dataofuser');
+    }
+
+
+    public function editdata($id)
+    {
+
+        $editrow = NexaModel::findOrFail($id);
+        // dd($editrow);
+        return view('editdata', compact('editrow'));
     }
 }
