@@ -8,7 +8,7 @@ use App\Models\NexaModel;
 
 class NexaController extends Controller
 {
-
+    //  why request
     public function store(Request $request)
     {
 
@@ -43,8 +43,8 @@ class NexaController extends Controller
     {
 
         $userdata = NexaModel::all();
-        //dd($userdata);  //dump and die
-        return view('showdata', compact('userdata'));
+        // dd($userdata);  //dump and die
+        return view('showdata', compact('userdata')); //both are same or diffrent 
     }
 
 
@@ -65,5 +65,25 @@ class NexaController extends Controller
         $editrow = NexaModel::findOrFail($id);
         // dd($editrow);
         return view('editdata', compact('editrow'));
+    }
+
+    public function update(Request $request)
+    {
+        // dd($request->all());
+
+        $updatedata = NexaModel::find($request->id);
+        $updatedata->update([
+            //databasecolumnname       ->name attribute in the html form 
+            'name' => $request->name,
+            'city' => $request->city,
+            'age' => $request->age,
+            'gender' => $request->gender,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'address' => $request->address,
+
+        ]);
+
+        return redirect()->route('dataofuser');
     }
 }

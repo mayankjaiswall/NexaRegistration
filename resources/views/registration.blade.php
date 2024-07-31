@@ -4,14 +4,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Dealership</title>
+    <title>Registration Form</title>
     <link rel="stylesheet" href="{{url('css/register.css')}}">
 
 </head>
 <body>
     <div class="form-container">
         <form action="{{route('storeddata')}}" method="post" class="registration-form">
-          @csrf  
+          @csrf   {{-- why it is here  --}}
             <h2>Registration Form</h2>
             <div class="form-group">
                 <label for="name">Full Name:</label>

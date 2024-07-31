@@ -10,5 +10,17 @@ class NexaModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'cars'; //table name not the database name keep this in your mind
+    protected $table = 'cars'; //table name not the database name 
+
+    protected $fillable = [
+
+        'name',
+        'city',
+        'age',
+        'gender',
+        'email',
+        'contact',
+        'address',
+
+    ];
 }

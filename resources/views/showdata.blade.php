@@ -11,8 +11,11 @@
 <body>
     
 <div class="container">
+
  <div class="row">
+
     <a href="{{route('registerdata')}}" class="btn btn-success">Add</a>
+    
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
@@ -30,11 +33,13 @@
                             <th colspan="2" >Action</th>
                         </tr>
                     </thead>
-        <tbody>
+                 <tbody>
          @foreach ($userdata as $item)
-              {{-- //  @dd($item); --}}
+
+              {{-- //  @dd($item);  just to check the data --}}
             <tr>
-                <td>{{$loop->iteration}}</td>
+                <td>{{$loop->iteration}}</td>   
+                {{-- Why we need to give this --}}
                 <td>{{$item->name}}</td>
                 <td>{{$item->city}}</td>
                 <td>{{$item->age}}</td>
