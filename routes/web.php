@@ -4,6 +4,7 @@ use App\Http\Controllers\NexaController;
 use Illuminate\Support\Facades\Route;
 
 //HOME PAGE ROUTE:
+
 Route::get('/', function () {
     return view('welcome');
 });

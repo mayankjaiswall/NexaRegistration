@@ -14,13 +14,12 @@
             </ul>
         </nav>
     </header>
-
     <section class="hero">
         
         <div class="hero-content">
             <h2>Find Your Dream Car</h2>
             <p>Explore our wide range of new and used cars at unbeatable prices.</p>
-            <a href="{{route('registerdata')}}" class="btn">Register Yourself</a>
+            <a href="{{route('registerdata')}}" class="btn btn-primary">Register Yourself</a>
         </div>
     </section>
 

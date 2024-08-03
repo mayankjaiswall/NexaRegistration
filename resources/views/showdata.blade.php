@@ -21,7 +21,7 @@
             <div class="card-body">
                 <table class="table table-striped table-bordered">
                     <thead align="center">
-                        <tr>
+                        <tr >
                             <th>Id</th>
                             <th>Name</th>
                             <th>City</th>
@@ -34,22 +34,22 @@
                         </tr>
                     </thead>
                  <tbody>
-         @foreach ($userdata as $item)
+         @foreach ($userdata as $element)
 
-              {{-- //  @dd($item);  just to check the data --}}
+              {{-- //  @dd($element);  just to check the data --}}
             <tr>
-                <td>{{$loop->iteration}}</td>   
+                {{-- <td>{{$loop->iteration}}</td>    --}}
                 {{-- Why we need to give this --}}
-                <td>{{$item->name}}</td>
-                <td>{{$item->city}}</td>
-                <td>{{$item->age}}</td>
-                <td>{{$item->gender}}</td>
-                <td>{{$item->email }}</td>
-                <td>{{$item->contact}}</td>
-                <td>{{$item->address}}</td>
+                <td>{{$element->name}}</td>
+                <td>{{$element->city}}</td>
+                <td>{{$element->age}}</td>
+                <td>{{$element->gender}}</td>
+                <td>{{$element->email }}</td>
+                <td>{{$element->contact}}</td>
+                <td>{{$element->address}}</td>
                                                    
-                <td><a href="{{route('deletedata',$item->id)}}" class="btn btn-danger">Delete</a></td>
-                <td><a href="{{route('editdata', $item->id)}}" class="btn btn-info">Edit</a></td>
+                <td><a href="{{route('deletedata',$element->id)}}" class="btn btn-danger">Delete</a></td>
+                <td><a href="{{route('editdata', $element->id)}}" class="btn btn-info">Edit</a></td>
                
             </tr>
             @endforeach
